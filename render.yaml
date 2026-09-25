@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: allsafe-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    healthCheckPath: /api/health
+    startCommand: python -u server.py
+    autoDeploy: true

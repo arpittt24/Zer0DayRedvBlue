@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Disallow: /status
+Disallow: /download
+Disallow: /downloads/
+Disallow: /data/
+Disallow: /files/
+Disallow: /api/
+Disallow: /assets/main.js

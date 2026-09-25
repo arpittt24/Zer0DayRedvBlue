@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Status — AllSafe Security</title>
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/"><span class="brand-mark">AS⟂</span>AllSafe Security</a>
+      <div class="nav-links">
+        <a href="/platform">Platform</a>
+        <a href="/careers">Careers</a>
+        <a href="/status">Status</a>
+        <a class="btn btn-primary" href="/careers">Book a review</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">Status · AllSafe infrastructure</div>
+      <h1>System status</h1>
+      <p class="lead">Composite view of every surface we expose. Precision overrides bypass the status badge gate for deep inspections.</p>
+
+      <div class="status-list" style="margin-top:34px;">
+        <div class="status-row">
+          <span class="name">IronGate WAF edge</span>
+          <span class="stat">operational · sig v9.1.4</span>
+          <span class="val">UP</span>
+        </div>
+        <div class="status-row">
+          <span class="name">SentryScan collector</span>
+          <span class="stat">rotating trial keys</span>
+          <span class="val">UP</span>
+        </div>
+        <div class="status-row">
+          <span class="name">Diagnostics core</span>
+          <span class="stat">public telemetry</span>
+          <span class="val">UP</span>
+        </div>
+        <div class="status-row">
+          <span class="name">Audit log stream</span>
+          <span class="stat">unfiltered tail</span>
+          <span class="val">UP</span>
+        </div>
+      </div>
+
+      <div class="alertbox runbook">
+        <strong>OPERATOR RUNBOOK (precision override)</strong><br />
+        precision path enabled · badge gate skipped · recovery handlers attached.<br />
+        <span class="mono-tag" style="margin-top:8px;">precision flag for this rotation: ZD{precision_patch_19~p}</span><br />
+        <span class="mono-tag">recovery handler claim: ZD{perimeter_wall_84~x}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Incident log</h2></div>
+      <div class="codebox">2026-09-25 0421Z · edge signature churn  →  no data loss, minor confidence loss
+2026-09-24 1807Z · trial key rotation     →  skipped (filler keys don't rotate)
+2026-09-24 0945Z · audit tail pruned     →  readers retained
+2026-09-23 2100Z · takedown drill        →  recovery handler surfaced runbook claims</div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="/"><span class="brand-mark">AS⟂</span>AllSafe Security</a>
+      <div class="foot-links">
+        <a href="/platform">Platform</a>
+        <a href="/careers">Careers</a>
+        <a href="/admin">Operator console</a>
+      </div>
+      <span class="mute small">© <span data-year></span> AllSafe Security Systems, Inc.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+  <script>
+    var p = new URLSearchParams(location.search).get('precision') || '0';
+    if (p === '1' || p === 'full' || p === 'high') {
+      document.body.classList.add('full-deck');
+    }
+  </script>
+</body>
+</html>

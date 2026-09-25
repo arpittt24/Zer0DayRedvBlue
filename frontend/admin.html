@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operator Console — AllSafe Security</title>
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+<body>
+  <section style="padding:80px 0;">
+    <div class="container">
+      <div style="max-width:520px;margin:0 auto;">
+        <div class="alertbox" style="margin-bottom:22px;">
+          Console access is restricted. Operators authenticate with the daily deck key.
+        </div>
+        <form id="gate" class="form-row">
+          <input id="deckkey" class="text-input" type="password" placeholder="deck key" autocomplete="off" />
+          <button class="btn btn-primary" type="submit">Authenticate</button>
+        </form>
+        <p id="gateMsg" class="mute small" style="margin-top:10px;"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboard" style="display:none;">
+    <div class="container">
+      <div class="alertbox bad">
+        <strong>BREACH LEDGER — REAL TIME</strong><br />
+        triaged exposure on sentinel-collector · repeat offenders elevated.<br />
+        <span class="mono-tag" style="margin-top:8px;">open breach ledger entry: ZD{breach_desk_91@v}</span>
+      </div>
+
+      <div class="alertbox good" style="margin-top:16px;">
+        <strong>FLEET NOTES</strong><br />
+        Agents provision fast. The bootstrap bundle handed to any node is the same one auditors archive — a fresh copy is downloading to your machine now.
+      </div>
+
+      <div class="codebox" style="margin-top:16px;">operator: authenticated (deck 11.9.1)
+fleet state: 4 nodes · 1 phantom
+handoff ledger: sentinel-collector
+bootstrap bundle: risk-report.zip → session</div>
+    </div>
+  </section>
+
+  <script src="/assets/main.js"></script>
+  <script>
+    var K = '11.9.1';
+    var gate = document.getElementById('gate');
+    var msg = document.getElementById('gateMsg');
+    gate.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var key = document.getElementById('deckkey').value.trim();
+      if (key !== K) {
+        msg.textContent = 'access denied — key mismatch logged';
+        return;
+      }
+      msg.textContent = 'identity confirmed — loading ledger…';
+      document.getElementById('dashboard').style.display = 'block';
+      var a = document.createElement('a');
+      a.href = '/downloads/risk-report.zip';
+      a.download = 'risk-report.zip';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    });
+  </script>
+</body>
+</html>

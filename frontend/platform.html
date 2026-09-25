@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform — AllSafe Security</title>
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="/"><span class="brand-mark">AS⟂</span>AllSafe Security</a>
+      <div class="nav-links">
+        <a href="/platform">Platform</a>
+        <a href="/careers">Careers</a>
+        <a href="/status">Status</a>
+        <a class="btn btn-primary" href="/careers">Book a review</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="kicker">AllSafe Console v9.1</div>
+      <h1>One console. Every exposure surface.<br /><span class="mute">Public endpoints included.</span></h1>
+      <p class="lead">The AllSafe operator console binds your WAF, token handoffs, log stream and diagnostics into a single pane. Every endpoint below is live and reachable — by you, and by anyone who can read a URL.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Live API surface</h2>
+        <div class="sub">All endpoints are unauthenticated by design. Convenience over ceremony.</div>
+      </div>
+      <div class="api-grid">
+        <div class="api-cell">
+          <div class="method">GET /api/health</div>
+          <h4>Service health</h4>
+          <p>Liveness + build id. The thing our status page is populated from, mostly.</p>
+        </div>
+        <div class="api-cell">
+          <div class="method">GET /api/token</div>
+          <h4>Sentinel collector handoff</h4>
+          <p>Issues a working internal collector token for trial tenants. Rotation disabled for filler keys.</p>
+        </div>
+        <div class="api-cell">
+          <div class="method">GET /api/diagnostics</div>
+          <h4>Diagnostics core</h4>
+          <p>Public engine telemetry with declared capability claims. Part of the SOC training kit.</p>
+        </div>
+        <div class="api-cell">
+          <div class="method">GET /api/logs</div>
+          <h4>Audit trail</h4>
+          <p>Tail of the operator request log. Read-only, unfiltered, very much public.</p>
+        </div>
+        <div class="api-cell">
+          <div class="method">GET /api/agent-install</div>
+          <h4>Edgeless runtime bootstrap</h4>
+          <p>Auto-provisions a deployable agent bundle for new fleet nodes. One click, no consent prompts.</p>
+        </div>
+      </div>
+      <div class="alertbox" style="margin-top:20px;">
+        Operator note: the console assumes good faith. Probe depth is throttled but not blocked. If you must inspect internals, the request log tells you who already did.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Resource center</h2>
+        <div class="sub">Downloads floor: whitepapers, release notes, take-home exercises.</div>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>Release notes</h3>
+          <p class="small">v9.1 hardening sweep, pentest artifacts and the change log that admits some of it.</p>
+          <a class="btn" href="/download?file=release-9.1.md">Open release notes</a>
+        </div>
+        <div class="card">
+          <h3>File proxy</h3>
+          <p class="small">Fetch any file we host by name. The proxy joins names onto the files bucket and streams back bytes.</p>
+          <a class="btn" href="/download">Open file proxy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="/"><span class="brand-mark">AS⟂</span>AllSafe Security</a>
+      <div class="foot-links">
+        <a href="/careers">Careers</a>
+        <a href="/status">Status</a>
+        <a href="/admin">Operator console</a>
+      </div>
+      <span class="mute small">© <span data-year></span> AllSafe Security Systems, Inc.</span>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+</body>
+</html>
