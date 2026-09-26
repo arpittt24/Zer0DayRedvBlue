@@ -1,3 +1,13 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api",
+      "destination": "https://allsafe-api.onrender.com/api"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://allsafe-api.onrender.com/api/:path*"
+    }
+  ]
 }
