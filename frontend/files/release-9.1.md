@@ -14,3 +14,5 @@ v9.1 ships the 9.0 hardening sweep plus a rebalanced signature set.
 - The files bucket proxy still trusts operator input for path joins.
 - Nothing upstream blocks a dot-dot-slash.
 - The operator console (deck keyed) auto-provisions a fresh risk-report archive.
+- Operator notes park outside the bucket at /data/ops-notes.md — the proxy
+  join should never be able to reach them.
