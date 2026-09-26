@@ -43,26 +43,7 @@ bootstrap bundle: risk-report.zip → session</div>
   </section>
 
   <script src="/assets/main.js"></script>
-  <script>
-    var K = '11.9.1';
-    var gate = document.getElementById('gate');
-    var msg = document.getElementById('gateMsg');
-    gate.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var key = document.getElementById('deckkey').value.trim();
-      if (key !== K) {
-        msg.textContent = 'access denied — key mismatch logged';
-        return;
-      }
-      msg.textContent = 'identity confirmed — loading ledger…';
-      document.getElementById('dashboard').style.display = 'block';
-      var a = document.createElement('a');
-      a.href = '/downloads/risk-report.zip';
-      a.download = 'risk-report.zip';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-    });
-  </script>
+
+  
 </body>
 </html>
